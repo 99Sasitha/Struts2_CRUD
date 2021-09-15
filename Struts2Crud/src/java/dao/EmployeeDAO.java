@@ -103,4 +103,31 @@ public class EmployeeDAO {
 
     }
 
+    //_____________________________GET Details for Edit________________________________________________________
+    public Employee getEmployee(int empid) {
+
+        Employee e = new Employee();
+
+        String sql = "SELECT * FROM employees WHERE empid=" + empid;
+
+        try {
+            ResultSet rs = DBConnect.getConnection().createStatement().executeQuery(sql);
+            if (rs.next()) {
+                e.setEmpid(rs.getInt("empid"));
+                e.setFirstname(rs.getString("firstname"));
+                e.setLastname(rs.getString("lastname"));
+                e.setEmail(rs.getString("email"));
+            }
+
+            return e;
+
+        } catch (SQLException error) {
+
+            out.println(error);
+
+        }
+
+        return null;
+    }
+
 }

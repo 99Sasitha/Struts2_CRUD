@@ -6,8 +6,26 @@
     <include file="example.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        <action name="" class="">
-            <result name=""></result>            
+        <action name="saveProduct" method="saveEmployee" class="controller.EmployeeController">
+            <result name="success">/addEmployee.jsp</result>   
+             <result name="input">/addEmployee.jsp</result>            
         </action>
+        
+<!--    _____________________View Page________________________________    -->
+
+        <action name="listPage" method="findAllEmployee" class="controller.EmployeeController">
+            <result name="success">/EmployeeList.jsp</result>
+        </action>
+  <!--_______________________________________________________________________________________-->    
+  
+        <action name="editEmp" method="editEmployee" class="controller.EmployeeController">
+            <result name="success">/EditEmployeePage.jsp</result>
+        </action>
+        
+        
+        <action name="updateEmployee" method="" class="controller.EmployeeController">
+            <result name="success">/EditEmployeePage.jsp</result>
+        </action>
+        
     </package>
 </struts>
