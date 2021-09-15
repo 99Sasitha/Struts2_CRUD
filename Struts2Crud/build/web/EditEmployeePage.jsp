@@ -27,7 +27,7 @@
             </font>
         </s:if>
         
-        <s:form action="updateEmploye" method="POST">
+        <s:form action="updateEmp" method="POST">
             <s:textfield name="employee.empid" label="Employee ID"></s:textfield>
             <s:textfield name="employee.firstname" label="Fisrt Name"></s:textfield>
             <s:textfield name="employee.lastname" label="Last Name"></s:textfield>

@@ -78,19 +78,20 @@ public class EmployeeDAO {
             }
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
+            out.print(ex);
         }
         return false;
 
     }
 
     //_____________________________________DELETE____________________________________________________________________________________
-    public boolean deleteEmployee(Employee e) {
+    public boolean deleteEmployee(int id) {
         try {
             String sql = "DELETE FROM employees WHERE empid=?";
 
             PreparedStatement pst = DBConnect.getConnection().prepareStatement(sql);
 
-            pst.setInt(1, e.getEmpid());
+            pst.setInt(1, id);
 
             int value = pst.executeUpdate();
             if (value > 0) {

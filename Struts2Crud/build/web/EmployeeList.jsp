@@ -15,6 +15,17 @@
     <body>
         <h1>Employee List</h1>
         <hr>
+        <s:if test="sm !=null">
+            <font color="green">
+            <s:property value="sm"/>
+            </font>
+        </s:if>
+        
+        <s:if test="em !=null">
+            <font color="red">
+            <s:property value="em"/>
+            </font>
+        </s:if>
         <table align="center" border="1">
             <thead>
                 <tr>
@@ -39,7 +50,7 @@
                             </a>
                         </td>
                         <td>
-                            <a href="deleteEmp.action?empid=<s:property value="empid"/>">
+                            <a onclick="return confirm('Are You want to Delete?')" href="deleteEmp.action?empid=<s:property value="empid"/>">
                                 <button>Delete</button>
                             </a>
                         </td>

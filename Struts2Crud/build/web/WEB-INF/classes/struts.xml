@@ -23,9 +23,12 @@
         </action>
         
         
-        <action name="updateEmployee" method="" class="controller.EmployeeController">
+        <action name="updateEmp" method="updateEmployee" class="controller.EmployeeController">
             <result name="success">/EditEmployeePage.jsp</result>
         </action>
         
+       <action name="deleteEmp" method="deleteEmployee" class="controller.EmployeeController">
+            <result name="success">/EmployeeList.jsp</result>
+        </action>
     </package>
 </struts>

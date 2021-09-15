@@ -97,12 +97,46 @@ public class EmployeeController extends ActionSupport {
 
         return SUCCESS;
     }
+//______________________________________UPDATE___________________________________________________________________________________
+    public String updateEmployee() {
+        employee.setFirstname(employee.getFirstname());
+        employee.setLastname(employee.getLastname());
+        employee.setEmail(employee.getEmail());
 
+        boolean status = dao.updateEmployee(employee);
+        if (status) {
+            setSm("Employee Update Successfully..");
+            return SUCCESS;
+        } else {
+            setEm("Employee Update Unsuccessfully");
+            return "input";
+        }
+
+    }
     //________________________________VIEW________________________________________________________________________________________ 
     public String findAllEmployee() throws SQLException {
         employeeList = dao.getAllEmployee();
         return SUCCESS;
 
+    }
+    
+    
+    //______________________________________DELETE___________________________________________________________________________________
+     public String deleteEmployee() throws SQLException {
+        HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+        int empid = Integer.parseInt(request.getParameter("empid"));
+
+        boolean status=dao.deleteEmployee(empid);
+        if (status) {
+            setSm("Employee Delete Successfully..");
+            findAllEmployee();
+            return SUCCESS;
+        } else {
+            setEm("Employee Delete Unsuccessfully");
+            return "input";
+        }
+
+        
     }
 
 }
