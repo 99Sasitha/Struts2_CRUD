@@ -6,9 +6,16 @@
     <include file="example.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
+        
+        
         <action name="saveProduct" method="saveEmployee" class="controller.EmployeeController">
             <result name="success">/addEmployee.jsp</result>   
              <result name="input">/addEmployee.jsp</result>            
+        </action>
+        
+        <action name="saveAdminProduct" method="AdminsaveEmployee" class="controller.EmployeeController">
+            <result name="success">/AdminaddEmployee.jsp</result>   
+             <result name="input">/AdminaddEmployee.jsp</result>            
         </action>
         
 <!--    _____________________View Page________________________________    -->
@@ -30,5 +37,11 @@
        <action name="deleteEmp" method="deleteEmployee" class="controller.EmployeeController">
             <result name="success">/EmployeeList.jsp</result>
         </action>
+        <!--_________________________________________________REGISTER PAGE_________________________________________-->
+        <action name="Register" method="saveRegister" class="controller.RegisterController">
+            <result name="success">/loginPage.jsp</result>   
+             <result name="input">/RegisterPage.jsp</result>            
+        </action>
+        
     </package>
 </struts>

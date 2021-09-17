@@ -67,14 +67,37 @@ public class EmployeeController extends ActionSupport {
     }
     //____________________________________ADD________________________________________________________________________________
 
-    public String saveEmployee() {
+    public String saveEmployee() throws SQLException {
         employee.setFirstname(employee.getFirstname());
         employee.setLastname(employee.getLastname());
         employee.setEmail(employee.getEmail());
+        employee.setUsername(employee.getUsername());
 
         boolean status = dao.saveEmployee(employee);
         if (status) {
             setSm("Employee Added Successfully..");
+            findAllEmployee();
+            return SUCCESS;
+        } else {
+            setEm("Employee Added Unsuccessfully");
+            return "input";
+        }
+
+    }
+    
+     //____________________________________ADD Admin Employee________________________________________________________________________________
+
+    public String AdminsaveEmployee() throws SQLException {
+        employee.setFirstname(employee.getFirstname());
+        employee.setLastname(employee.getLastname());
+        employee.setEmail(employee.getEmail());
+        employee.setUsername(employee.getUsername());
+        
+
+        boolean status = dao.AdminsaveEmployee(employee);
+        if (status) {
+            setSm("Employee Added Successfully..");
+            findAllEmployee();
             return SUCCESS;
         } else {
             setEm("Employee Added Unsuccessfully");

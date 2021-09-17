@@ -6,6 +6,7 @@
 package test;
 
 import dao.EmployeeDAO;
+import dao.RegisterDAO;
 import java.sql.SQLException;
 
 /**
@@ -17,6 +18,9 @@ public class Test {
     
         EmployeeDAO dao=new EmployeeDAO();
         System.out.println(dao.getAllEmployee());
+        
+        RegisterDAO dao1=new RegisterDAO();
+        System.out.println(dao1.getAllregisters());
     
     }
     

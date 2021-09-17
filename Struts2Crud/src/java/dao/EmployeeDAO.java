@@ -30,7 +30,7 @@ public class EmployeeDAO {
         try {
             ResultSet rs = DBConnect.getConnection().createStatement().executeQuery(sql);
             while (rs.next()) {
-                list.add(new Employee(rs.getInt("empid"), rs.getString("firstname"), rs.getString("lastname"), rs.getString("email")));
+                list.add(new Employee(rs.getInt("empid"), rs.getString("firstname"), rs.getString("lastname"), rs.getString("email"),rs.getString("datetime"),rs.getString("loginUser"),rs.getString("loginAdmin")));
             }
             return list;
         } catch (Exception e) {
@@ -43,12 +43,13 @@ public class EmployeeDAO {
     //____________________________________________________saveEmployee()________________________________________________________________________
     public boolean saveEmployee(Employee e) {
         try {
-            String sql = "INSERT INTO employees(empid,firstname,lastname,email)VALUES(null,?,?,?)";
+            String sql = "INSERT INTO employees(empid,firstname,lastname,email,loginUser,loginAdmin)VALUES(null,?,?,?,?,'-')";
 
             PreparedStatement pst = DBConnect.getConnection().prepareStatement(sql);
             pst.setString(1, e.getFirstname());
             pst.setString(2, e.getLastname());
             pst.setString(3, e.getEmail());
+            pst.setString(4, e.getUsername());
 
             int value = pst.executeUpdate();
             if (value > 0) {
@@ -60,7 +61,27 @@ public class EmployeeDAO {
         return false;
 
     }
+ //____________________________________________________saveEmployee()________________________________________________________________________
+    public boolean AdminsaveEmployee(Employee e) {
+        try {
+            String sql = "INSERT INTO employees(empid,firstname,lastname,email,loginUser,loginAdmin)VALUES(null,?,?,?,'-',?)";
 
+            PreparedStatement pst = DBConnect.getConnection().prepareStatement(sql);
+            pst.setString(1, e.getFirstname());
+            pst.setString(2, e.getLastname());
+            pst.setString(3, e.getEmail());
+            pst.setString(4, e.getUsername());
+
+            int value = pst.executeUpdate();
+            if (value > 0) {
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+
+    }
     //________________________________________UPDATE________________________________________________________
     public boolean updateEmployee(Employee e) {
         try {

@@ -17,6 +17,7 @@ import java.sql.SQLException;
 public class DBConnect {
 
     private static Connection con;
+    private static Connection con1;
 
     static {
         try {
@@ -31,6 +32,12 @@ public class DBConnect {
     public static Connection getConnection() throws SQLException {
         con = DriverManager.getConnection("jdbc:mysql://localhost:3308/epicstruts2", "root", "");
         return con;
+    }
+    
+    public static Connection getConnection1() throws SQLException{
+    
+    con1=DriverManager.getConnection("jdbc:mysql://localhost:3308/epicstruts2", "root", "");
+    return con1;
     }
 
 }

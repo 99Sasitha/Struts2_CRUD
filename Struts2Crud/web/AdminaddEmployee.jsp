@@ -1,5 +1,5 @@
 <%-- 
-    Document   : addEmployee
+    Document   : AdminaddEmployee
     Created on : Sep 15, 2021, 8:37:18 AM
     Author     : Sasitha Munasinghe
 --%>
@@ -18,7 +18,7 @@
         <title>Epic Struts2</title>
     </head>
     <body>
-        <h1> User Add Employee</h1>
+        <h1> Admin Add Employee</h1>
         <hr>
         <div class="container" style="background-color: lightgray;padding: 25px;border-radius: 20px">
         <s:if test="sm !=null">
@@ -34,15 +34,13 @@
         </s:if>
 
             
-        <form action="saveProduct" method="POST">
+        <form action="saveAdminProduct" method="POST">
             
-            
-            <label>Current Log in User Name :</label>
+            <label>Current Log in Admin Name :</label>
             <select name="employee.username">
                 <option value="<%=request.getAttribute("username")%>"><%=request.getAttribute("username")%></option>
                 
             </select>
-            
             
             <div class="form-group">
                 <label>First Name :</label>
