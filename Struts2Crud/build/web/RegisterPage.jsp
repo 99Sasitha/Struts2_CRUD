@@ -21,11 +21,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Epic Technology</title>
     </head>
-    <h1 style="text-align: center;">Register Page</h1>
+    <h1 style="text-align: center;font-weight: bolder;">Register Page</h1>
         <hr>
-        <div class="container" style="background-color: lightgray;border-radius: 20px">
-    <body style="background-size: cover;background-repeat: no-repeat;background-image:url('https://backgroundcheckall.com/wp-content/uploads/2018/10/background-teknologi-white-6.jpg') ">
         
+    <body style="background-size: cover;background-repeat: no-repeat;background-image:url('https://s3-eu-central-1.amazonaws.com/centaur-wp/theengineer/prod/content/uploads/2016/09/02092317/IOT-29774.jpg') ">
+        <center> <img style="border-radius: 100px;" src="https://media-exp1.licdn.com/dms/image/C560BAQH00MCBWLYYyA/company-logo_200_200/0?e=2159024400&v=beta&t=AubBS-Kij0iEK5qgPl0pnH3N-ZzLVcz1TZX6TpzTZrs"  alt="..." class="img-thumbnail"></center>
+        <div class="container" style="background-color: lightgoldenrodyellow;border-radius: 20px;margin-top: 10px">
         <s:if test="sm !=null">
             <font color="green">
             <s:property value="sm"/>
@@ -51,7 +52,7 @@
     <input type="password" class="form-control" name="register.password" placeholder="Enter Password" required>
   </div>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Register</button>
   <a href="loginPage.jsp">Already have Account?</a>
 </form>
         </div>
