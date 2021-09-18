@@ -121,7 +121,7 @@ public class EmployeeController extends ActionSupport {
         return SUCCESS;
     }
 //______________________________________UPDATE___________________________________________________________________________________
-    public String updateEmployee() {
+    public String updateEmployee() throws SQLException {
         employee.setFirstname(employee.getFirstname());
         employee.setLastname(employee.getLastname());
         employee.setEmail(employee.getEmail());
@@ -129,6 +129,7 @@ public class EmployeeController extends ActionSupport {
         boolean status = dao.updateEmployee(employee);
         if (status) {
             setSm("Employee Update Successfully..");
+             findAllEmployee();
             return SUCCESS;
         } else {
             setEm("Employee Update Unsuccessfully");

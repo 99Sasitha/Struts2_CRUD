@@ -31,7 +31,7 @@
         
         
         <action name="updateEmp" method="updateEmployee" class="controller.EmployeeController">
-            <result name="success">/EditEmployeePage.jsp</result>
+            <result name="success">/EmployeeList.jsp</result>
         </action>
         
        <action name="deleteEmp" method="deleteEmployee" class="controller.EmployeeController">

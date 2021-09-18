@@ -13,6 +13,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="https://media-exp1.licdn.com/dms/image/C560BAQH00MCBWLYYyA/company-logo_200_200/0?e=2159024400&v=beta&t=AubBS-Kij0iEK5qgPl0pnH3N-ZzLVcz1TZX6TpzTZrs"  />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -22,13 +23,14 @@
         <title>Epic Technology</title>
     </head>
 
-    <body>
+   <body style="background-size: cover;background-repeat: no-repeat;background-image:url('https://s3-eu-central-1.amazonaws.com/centaur-wp/theengineer/prod/content/uploads/2016/09/02092317/IOT-29774.jpg') ">
 
         
 
-        <h1 style="text-align: center;">Log in</h1>
+        <h1 style="text-align: center;font-weight: bolder;font-size: 50px">Epic Technology</h1>
         <hr>
-        <div class="container" style="background-color: lightgray;border-radius: 20px"> 
+       <center> <img style="border-radius: 100px;" src="https://media-exp1.licdn.com/dms/image/C560BAQH00MCBWLYYyA/company-logo_200_200/0?e=2159024400&v=beta&t=AubBS-Kij0iEK5qgPl0pnH3N-ZzLVcz1TZX6TpzTZrs"  alt="..." class="img-thumbnail"></center>
+        <div class="container" style="background-color: lightsteelblue;;border-radius: 20px;margin-top: 20px"> 
 
             <form action="loginaction.jsp" method="post" style="padding: 30px">
                 <div class="form-group">
@@ -42,7 +44,7 @@
                     <input type="password" class="form-control" name="password" placeholder="Enter Password">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Login</button>
                 <a href="RegisterPage.jsp">Register</a>
             </form>
             
