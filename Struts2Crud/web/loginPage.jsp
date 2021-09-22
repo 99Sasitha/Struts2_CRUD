@@ -44,7 +44,7 @@
                     <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-success">Login</button>
                 <a href="RegisterPage.jsp">Register</a>
             </form>
             
