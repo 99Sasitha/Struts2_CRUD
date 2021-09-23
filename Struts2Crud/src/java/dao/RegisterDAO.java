@@ -9,6 +9,7 @@ import static java.lang.System.out;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLDataException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Register;
@@ -20,7 +21,7 @@ import util.DBConnect;
  */
 public class RegisterDAO {
 // __________________________________View Data____________________________________________________   
-    public List<Register> getAllregisters(){
+    public List<Register> getAllregisters() throws SQLException{
     
         List<Register> list=new ArrayList<>();
         
@@ -36,12 +37,17 @@ public class RegisterDAO {
         } catch (Exception e) {
             out.println(e);
         }
+        finally{
+        if(DBConnect.getConnection1()!=null){
+        DBConnect.getConnection1().close();
+        }
+        }
         
         return null;
     
     }
  //_______________________________________________INSERT DATA____________________________________________________________________________________
-     public boolean saveRegister(Register r){
+     public boolean saveRegister(Register r) throws SQLException{
          try {
              String sql="INSERT INTO register(id,username,password,userRole)VALUES(null,?,md5(?),'user')";
              PreparedStatement pst=DBConnect.getConnection1().prepareStatement(sql);
@@ -55,6 +61,11 @@ public class RegisterDAO {
          } catch (Exception e) {
              out.println(e);
          }
+         finally{
+        if(DBConnect.getConnection1()!=null){
+        DBConnect.getConnection1().close();
+        }
+        }
          return false;
      }
     //----------------------------------------------GET REGISTERS______________________________________________________________________________________

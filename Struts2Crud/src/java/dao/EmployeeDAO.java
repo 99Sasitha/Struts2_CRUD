@@ -36,12 +36,17 @@ public class EmployeeDAO {
         } catch (Exception e) {
             out.println(e);
         }
+        finally{
+        if(DBConnect.getConnection()!=null){
+        DBConnect.getConnection().close();
+        }
+        }
         return null;
 
     }
 
     //____________________________________________________saveEmployee()________________________________________________________________________
-    public boolean saveEmployee(Employee e) {
+    public boolean saveEmployee(Employee e) throws SQLException {
         try {
             String sql = "INSERT INTO employees(empid,firstname,lastname,email,loginUser,loginAdmin)VALUES(null,?,?,?,?,'-')";
 
@@ -58,11 +63,16 @@ public class EmployeeDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally{
+        if(DBConnect.getConnection()!=null){
+        DBConnect.getConnection().close();
+        }
+        }
         return false;
 
     }
  //____________________________________________________saveEmployee()________________________________________________________________________
-    public boolean AdminsaveEmployee(Employee e) {
+    public boolean AdminsaveEmployee(Employee e) throws SQLException {
         try {
             String sql = "INSERT INTO employees(empid,firstname,lastname,email,loginUser,loginAdmin)VALUES(null,?,?,?,'-',?)";
 
@@ -79,11 +89,16 @@ public class EmployeeDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally{
+        if(DBConnect.getConnection()!=null){
+        DBConnect.getConnection().close();
+        }
+        }
         return false;
 
     }
     //________________________________________UPDATE________________________________________________________
-    public boolean updateEmployee(Employee e) {
+    public boolean updateEmployee(Employee e) throws SQLException {
         try {
             String sql = "UPDATE employees SET firstname=?, lastname=?, email=? WHERE empid=?";
 
@@ -101,12 +116,17 @@ public class EmployeeDAO {
             Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
             out.print(ex);
         }
+        finally{
+        if(DBConnect.getConnection()!=null){
+        DBConnect.getConnection().close();
+        }
+        }
         return false;
 
     }
 
     //_____________________________________DELETE____________________________________________________________________________________
-    public boolean deleteEmployee(int id) {
+    public boolean deleteEmployee(int id) throws SQLException {
         try {
             String sql = "DELETE FROM employees WHERE empid=?";
 
@@ -121,12 +141,17 @@ public class EmployeeDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally{
+        if(DBConnect.getConnection()!=null){
+        DBConnect.getConnection().close();
+        }
+        }
         return false;
 
     }
 
     //_____________________________GET Details for Edit________________________________________________________
-    public Employee getEmployee(int empid) {
+    public Employee getEmployee(int empid) throws SQLException {
 
         Employee e = new Employee();
 
@@ -147,6 +172,11 @@ public class EmployeeDAO {
 
             out.println(error);
 
+        }
+        finally{
+        if(DBConnect.getConnection()!=null){
+        DBConnect.getConnection().close();
+        }
         }
 
         return null;

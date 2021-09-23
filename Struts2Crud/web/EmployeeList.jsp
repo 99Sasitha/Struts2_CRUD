@@ -26,7 +26,7 @@
         <title>Epic Struts2</title>
     </head>
     <body style="background-size: cover;background-repeat: no-repeat;background-image:url('https://backgroundcheckall.com/wp-content/uploads/2018/10/background-teknologi-white-6.jpg') ">
-        <nav class="nav nav-pills nav-fill" style="margin-top: 15px;color:white;padding:10px;background-color: lightsteelblue;">
+        <nav class="nav nav-pills nav-fill" style="margin-top: 5px;color:white;padding:10px;background-color: lightsteelblue;">
   <a class="nav-item nav-link" href="AdminaddEmployee.jsp"style="border-right: gray;border-style: inset;margin-right: 10px;background-color:whitesmoke">Add Employee</a>
   
   <%
